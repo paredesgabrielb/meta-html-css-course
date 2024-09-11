@@ -21,11 +21,14 @@ img{
 
 header > img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 2rem;
     width: 250px;
+    margin-bottom: -4.5rem;
+    transition: .5s;
 }
-
+header > img:hover{
+    transform: scale(1.2);
+}
 
 section {
     display: flex;
@@ -33,15 +36,77 @@ section {
 
 article{
     flex: 1;
+    padding: 1rem 2rem;
+    margin: 1rem;
+}
+
+section article img {
+    max-width: 100%;
+    min-height: 50%;
 }
 
 
+#banner{
+    background-image: url('img/4.jpg') ;
+    background-position: center; 
+    border-radius: 2rem;
+    position: relative;
+    animation-name: entrance-right;
+    animation-duration: .8s;
+    animation-delay:.3s;
+    animation-fill-mode: backwards;
+}
+#banner h1, #banner p{
+    color: white;
+}
+
+#articles article{
+    background-color: rgb(255 255 255);
+    margin: 1rem;
+    border-radius: 2rem;
+    padding-bottom: 2rem;
+    transition: .5s ease-in-out;
+    animation-duration: 0.5s;
+    animation-name: entrance-fade;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+#articles article:hover{
+    box-shadow: black 1px 1px 10px
+}
+#articles p{
+    height: 130px;
+}
+
+@keyframes entrance-fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+@keyframes entrance-right {
+    from{
+        left: 100vw;
+    }
+    to{
+        left: 0;
+    }
+    
+}
+
 nav ul{
     list-style: none;
-    text-align: center;
-    background-color: aquamarine;
+    text-align: right;
+    background-color: rgb(255 255 255);
     padding: 10px;
     border-radius: 15px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-right: 2rem;
 }
  
 nav ul li {
@@ -49,6 +114,33 @@ nav ul li {
     margin: 10px;
 }
 
-nav ul li:nth-child(1) {
-    background-color: black;
+nav ul li a {
+    text-decoration: none;
+    color: #d0604c;
+}
+
+nav ul li a:hover {
+    border-bottom: 1.5px solid #d0604c;
+}
+
+footer {
+    display: flex;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    border-top: 2px solid rgb(208 96 76);
+}
+
+footer div{
+    flex: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+footer img {
+    width: 200px;
+}
+
+footer p{
+    text-align: right;
+    font-size: .7rem;
 }
